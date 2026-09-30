@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NovaShop - Gestión de Inventario</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Layout Principal Dashboard -->
+  <div class="app-container">
+    
+    <!-- Sidebar Navegación Persistente -->
+    <aside class="sidebar">
+      <div class="sidebar-brand">
+        <div class="brand-logo">N</div>
+        <span class="brand-name">NovaShop</span>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a href="#" class="nav-item">📊 Inicio</a>
+        <a href="#" class="nav-item">👥 Usuarios</a>
+        <a href="#" class="nav-item active">📦 Inventario</a>
+        <a href="#" class="nav-item">🛒 Ventas</a>
+        <a href="#" class="nav-item">📈 Reportes</a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <p>Versión 0.0.1</p>
+        <p>Soporte: soporte@novashop.com</p>
+      </div>
+    </aside>
+
+    <!-- Área Principal de Trabajo -->
+    <main class="main-content">
+      
+      <!-- Header Superior -->
+      <header class="header">
+        <div class="search-container">
+          <input type="search" id="searchInput" placeholder="Buscar por SKU o Nombre..." class="form-input">
+        </div>
+        <div class="user-profile">
+          <div class="user-info">
+            <p class="user-name">Julio Izquierdo</p>
+            <p class="user-role">Administrador</p>
+          </div>
+        </div>
+      </header>
+
+      <!-- Vista: Módulo Inventario -->
+      <section class="content-body">
+        
+        <!-- Cabecera de Módulo -->
+        <div class="page-header">
+          <div>
+            <h1 class="page-title">Inventario</h1>
+            <p class="page-subtitle">Administra productos, stock y precios del sistema NovaShop</p>
+          </div>
+          <button id="btnOpenModal" class="btn btn-primary">+ Agregar Producto</button>
+        </div>
+
+        <!-- Tabla de Datos (Data Grid) -->
+        <div class="table-card">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>SKU</th>
+                <th>Nombre</th>
+                <th>Categoría</th>
+                <th>Stock</th>
+                <th>Precio</th>
+                <th class="text-right">Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="inventoryTableBody">
+              <tr>
+                <td class="font-mono">NSH-0001</td>
+                <td>Auriculares inalámbricos EchoTone V2</td>
+                <td>Electrónica</td>
+                <td><span class="badge badge-success">24 u.</span></td>
+                <td class="font-semibold">$ 240.000</td>
+                <td class="text-right">
+                  <button class="btn-action btn-delete">Eliminar</button>
+                </td>
+              </tr>
+              <tr>
+                <td class="font-mono">NSH-0103</td>
+                <td>Cafetera Espresso BaristaOne</td>
+                <td>Electrónica</td>
+                <td><span class="badge badge-danger">0 u. (Agotado)</span></td>
+                <td class="font-semibold">$ 520.000</td>
+                <td class="text-right">
+                  <button class="btn-action btn-delete">Eliminar</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </section>
+    </main>
+
+  </div>
+
+  <!-- Modal / Formulario Emergente (CRUD) -->
+  <dialog id="productModal" class="modal">
+    <div class="modal-content">
+      <h2 class="modal-title">Agregar Nuevo Producto</h2>
+      
+      <form id="productForm">
+        <div class="form-group">
+          <label for="prodSku">SKU / Código</label>
+          <input type="text" id="prodSku" required placeholder="Ej: NSH-0205" class="form-input">
+        </div>
+
+        <div class="form-group">
+          <label for="prodName">Nombre del Producto</label>
+          <input type="text" id="prodName" required placeholder="Ej: Monitor Gamer 27''" class="form-input">
+        </div>
+
+        <div class="form-group">
+          <label for="prodCategory">Categoría</label>
+          <select id="prodCategory" class="form-input">
+            <option value="Electrónica">Electrónica</option>
+            <option value="Hogar">Hogar</option>
+            <option value="Moda">Moda</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="prodStock">Stock Inicial</label>
+            <input type="number" id="prodStock" min="0" required placeholder="10" class="form-input">
+          </div>
+
+          <div class="form-group">
+            <label for="prodPrice">Precio ($ COP)</label>
+            <input type="number" id="prodPrice" step="100" min="0" required placeholder="150000" class="form-input">
+          </div>
+        </div>
+
+        <div class="modal-actions">
+          <button type="button" id="btnCloseModal" class="btn btn-secondary">Cancelar</button>
+          <button type="submit" class="btn btn-primary">Guardar Producto</button>
+        </div>
+      </form>
+    </div>
+  </dialog>
+
+  <!-- Script JavaScript -->
+  <script src="app.js"></script>
+</body>
+</html>
