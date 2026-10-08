@@ -1,11 +1,11 @@
 {
-  "name": "novashop-frontend",
+  "name": "novashop-backend",
   "version": "1.0.0",
-  "description": "**NovaShop - Sistema Web de Gestión Comercial y Facturación**",
-  "main": "app.js",
+  "description": "NovaShop - Backend REST API",
+  "main": "src/app.js",
   "scripts": {
     "start": "node src/app.js",
-    "dev": "nodemon src/app.js"
+    "dev": "nodemon -L --watch src src/app.js"
   },
   "repository": {
     "type": "git",
@@ -15,10 +15,6 @@
   "author": "",
   "license": "ISC",
   "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/aizath97-pixel/novashop-frontend/issues"
-  },
-  "homepage": "https://github.com/aizath97-pixel/novashop-frontend#readme",
   "dependencies": {
     "cors": "^2.8.6",
     "dotenv": "^18.0.6",

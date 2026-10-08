@@ -27,7 +27,7 @@
       </nav>
 
       <div class="sidebar-footer">
-        <p>Versión 0.0.1</p>
+        <p>Versión 0.0.2</p>
         <p>Soporte: soporte@novashop.com</p>
       </div>
     </aside>
@@ -120,12 +120,11 @@
         </div>
 
         <div class="form-group">
-          <label for="prodCategory">Categoría</label>
-          <select id="prodCategory" class="form-input">
-            <option value="Electrónica">Electrónica</option>
-            <option value="Hogar">Hogar</option>
-            <option value="Moda">Moda</option>
-          </select>
+           <label for="prodCategory">Categoría</label>
+           <select id="prodCategory" class="form-input" required>
+             <option value="1">Electrónica</option>
+             <option value="2">Accesorios</option>
+           </select>
         </div>
 
         <div class="form-row">
@@ -136,7 +135,7 @@
 
           <div class="form-group">
             <label for="prodPrice">Precio ($ COP)</label>
-            <input type="number" id="prodPrice" step="100" min="0" required placeholder="150000" class="form-input">
+            <input type="number" id="prodPrice" step="1" min="0" required placeholder="150000" class="form-input">
           </div>
         </div>
 

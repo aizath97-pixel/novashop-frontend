@@ -207,6 +207,11 @@ body {
 }
 .badge-success { background-color: var(--success-bg); color: var(--success); }
 .badge-danger { background-color: var(--danger-bg); color: var(--danger); }
+.badge-warning {
+  background-color: #fef3c7; /* Fondo amarillo suave */
+  color: #92400e;            /* Texto café/amarillo oscuro */
+  border: 1px solid #fde68a;
+}
 
 /* ==========================================
    4. BOTONES E INPUTS
