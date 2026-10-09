@@ -70,7 +70,7 @@ El backend queda en la carpeta `novashop-backend` y expone lo siguiente:
 ### 1. Clonar el repositorio
 
 ```bash
-git clone <url-del-repositorio>
+git clone [https://github.com/aizath97-pixel/novashop-frontend.git](https://github.com/aizath97-pixel/novashop-frontend.git)
 cd NovaShop-project
 ```
 
